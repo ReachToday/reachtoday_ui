@@ -1,0 +1,54 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:custom="urn:import:com.reachtoday.client.application.searchcontrol"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:fastbutton="urn:import:com.reachtoday.client.application.fastbutton">
+	<ui:with field="resources" type="com.reachtoday.client.resource.MobileResources" />
+	<ui:with field="cellListResources" type="com.reachtoday.client.resource.CellListStyle" />
+	<ui:style>
+		.searchcontrol {
+			margin-top: 3%;
+		}
+		
+		.text {
+			text-align: center;
+			font-size: 18px;
+			color: #3e3e3e;
+		}
+		
+		.vpanel {
+			margin-left: auto;
+			margin-right: auto;
+			-webkit-transition: margin-top .218s;
+			margin-top: 20%;
+		}
+		
+		.busListText {
+			text-decoration: none;
+		}
+		.scrollPanel {
+	-webkit-overflow-scrolling: touch;
+	overflow: scroll;
+	position: absolute;
+	margin-top: 81px;
+	height: 86%;
+	width:100%;
+}
+		</ui:style>
+	<g:HTMLPanel styleName="{resources.livetrackingstyles.container}">
+		<g:HorizontalPanel styleName='{resources.mobilestyles.headerStyles}'
+			ui:field="headerPanel" horizontalAlignment="center">
+			
+			<g:Label styleName='{resources.mobilestyles.headerLabelStyles}'
+				ui:field="headerLabel" text="Search User">
+			</g:Label>
+		</g:HorizontalPanel>
+
+		<g:FlowPanel styleName="{resources.livetrackingstyles.scrollPanel}" ui:field="searchControlVPanel">
+			<g:TextBox ui:field="usersearchbox"></g:TextBox>
+		</g:FlowPanel>
+		<g:FlowPanel styleName='{style.scrollPanel}'
+			ui:field="scrollpanelforfriendslist" debugId="scrollpanelforfriendslist" visible="false">
+			
+		</g:FlowPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

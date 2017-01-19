@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton"
+	  xmlns:custom_search="urn:import:com.reachtoday.client.application.searchcontrol">
+	<ui:with field="resources"
+		type="com.reachtoday.client.resource.TabletResources" />	
+ 
+	<ui:style
+		type="com.reachtoday.client.application.main.MainTabletView.MainStyle">
+    /* Add CSS here. See the GWT docs on UI Binder for more details */
+
+
+
+.viewport {
+    background-color: white;
+
+}
+ 
+  .headerPractice {
+    color: #FFFFFF;
+    font-size: 11pt;
+    font-weight: bold;
+    margin-left: 11%;
+    position: absolute;
+    top: 7px;
+    width: 30%;
+}  
+ .close-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: transparent;
+}
+
+.display{
+	min-height:90%;
+height:90%;
+	overflow-x:hidden;
+}
+
+.page {
+    position: relative;
+    z-index: 2;
+    min-width: 320px;
+    height:100%;
+	width:100%;
+    background-color: #fff;
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition-duration: 200ms;
+    -webkit-transition-timing-function: ease-in;
+ 	transition-property:transform;    
+    transform: translate3D(0, 0, 0);
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+	    
+}
+
+.menu {
+    position: fixed;
+    width: 260px;
+    top: 0;
+    left: 0;
+	background-color: #ebebeb;
+	min-height: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;   
+	
+}
+
+
+
+
+.page header {
+        height: 43px;
+		background-color:#119dc9;
+        border-color: #111A33;
+        -moz-transition: left 200ms ease-in;    	
+    }
+    
+     .search {
+		background-color:red;
+		margin-top:5px;
+		margin-left:4px;
+    }
+    
+    .separator {
+border-right:solid 1px #1090b6;
+
+        
+        
+    }
+.separator1
+{
+padding:0px;
+border-left:solid 1px #1090b6;
+border-right:solid 1px #1090b6;
+}    
+    .separator2 {
+border-left:solid 1px #1090b6;
+
+        
+        
+    }
+
+    .separatorx
+    {
+        background: #434B5C;
+        background: -webkit-gradient( linear, left top, left bottom, from(#434B5C), to(#394152) );
+        background: -moz-linear-gradient(top, #434B5C 0%, #394152 100%);
+        border-bottom: 1px solid #242A37;
+        border-top: none;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+        color: #7A8292;
+        padding: 4px 0 4px 8px;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+        font-size: 18px;
+        line-height: 34px;
+        text-transform: uppercase;
+    }
+    .menu li {
+        position: relative;
+        display: block;
+        list-style: none;
+        min-height: 43px;
+        line-height: 40px;
+        padding: 3px 0 3px 8px;     
+        background-color: #32394A;
+        border-bottom: 1px solid #242A37;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+        font-size: 16px;
+        color: #C4CCDA;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, .6);
+    }
+    
+   
+    .menu li img {
+        vertical-align: middle;
+        display: block;
+        float: left;
+        margin: 4px 5px 0 0;
+    }
+    
+    .count {
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        min-width: 11px;
+        text-align: center;
+        font-weight: bold;
+           background: -moz-linear-gradient(center top , #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314 100%) repeat scroll 0 0 transparent;
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1;
+    padding: 0.1em 0.4em 0.2em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    
+    
+    .trigger {
+        position: absolute;
+        z-index: 2;
+        top: 11px;
+        left: 14px;
+        display: block;
+        width: 24px;
+        height: 21px;
+        background: transparent url(https://s-static.ak.facebook.com/rsrc.php/v1/y8/r/NwLTcDwF0zP.png) no-repeat;
+    }
+    
+    .icons {
+  
+    height: 43px;
+    position: absolute;
+    width: 80%;
+margin-left:10%;
+margin-right:10%;
+    }
+    
+    
+    
+    .icons > span {
+display: inline-block;
+padding: 0px 8px;
+}
+
+.head
+{
+margin: auto;
+}
+.alert
+{
+margin-top:0px;
+z-index:2 !important;
+}
+
+.story {
+        position: relative;
+        padding: 7px;
+        border-top: 1px solid #E9E9E9;
+        background-color: #fff;
+    }
+    
+    .story > img {
+        position: absolute;
+    }
+    .contents {
+        margin-left: 50px;
+    }
+    .name {
+        font-size: 14px;
+        color: #3B5998;
+        text-decoration: none;
+    }
+    
+    .actions {
+        color: gray;
+        margin: 6px 25px 3px 0;
+        
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .meta {
+        position: relative;
+        margin-top: 12px;
+        padding: 4px 0 4px 9px;
+        background: #EDEFF4;
+        border-bottom: 1px solid #E5EAF1;
+        border-top: 1px solid #EDEFF4;
+        font-weight: bold;
+        color: #3B5998;
+    }
+    
+    .meta::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 10px;
+        border-style: solid;
+        border-width: 0 8px 8px;
+        border-color: #EDEFF4 transparent;
+        display: block;
+        width: 0;
+    }
+    
+    .meta span {
+        padding-right: 10px;
+    }
+    
+    .meta span img {
+        vertical-align: text-bottom;
+    }
+    
+    .composer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    padding: 7px 4px;
+    background-color: #F2F2F2;
+    border-bottom: 1px solid #CCC;
+}
+.composer button {
+    display: block;
+    margin: 0 4px;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #505C77;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+    border: 1px solid;
+    border-color: #9599A1 #A8ABB4 #ACB1BB;
+    -webkit-box-shadow: inset 0 1px 1px rgba(43, 48, 60, .18), 0 1px 0 white;
+    box-shadow: inset 0 1px 1px rgba(43, 48, 60, .18), 0 1px 0 white;
+    background: -webkit-gradient( linear, left top, left bottom, from(#FDFEFE), to(#F0F1F2) );
+    background: -moz-linear-gradient(top, #FDFEFE 0%, #F0F1F2 100%);
+    -webkit-background-clip: padding-box;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 27px;
+    min-width: 50px;
+}
+.composer button img {
+    position: relative;
+    top: -2px;
+    display: inline-block;
+    margin-right: 1px;
+    vertical-align: text-top;
+}
+
+
+
+
+.menu {
+    position: fixed;
+    width: 260px;
+	height:100%;
+    top: 0;
+    left: 0;
+	overflow-y:auto;
+	overflow-x:hidden;
+
+}
+
+.menu  header {
+        padding: 0 8px;
+        width: 260px;
+        height: 43px;
+       
+         
+        
+    }
+    
+    
+    .menux {
+     position: fixed;
+    width: 260px;
+    top: 0;
+    right: 0;
+	background-color: #ebebeb;
+	height:100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-user-select: none;  
+	overflow-y:auto;
+
+
+	  
+}
+
+
+.SelectedmenuPanel{
+
+background-color:#f9f9f9;
+}
+
+
+.gwt-StackLayoutPanel
+
+{
+  	border: 5px solid red !important;
+	height:65%;
+}
+
+.textbox{
+    border:none;
+   	background-color:#ffffff;
+	font-size: 13px;
+    font-weight: bold;
+    height: 27px;
+    padding: 2px 8px 0 10px;
+    position: relative;
+    top: -7px;
+    width: 87%;
+}
+
+
+.shadow{
+
+width: 2%;
+
+
+}
+
+
+    .copy {
+        padding: 10px 8px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .copy p {
+        font-weight: 100;
+    }
+    
+    .mole     {
+position:fixed;
+float:right;
+right:50px;
+top:9px;
+display:none;
+color:white;
+display:none;}
+
+.foralerts
+{
+	background: #ff0000; /* Old browsers */
+    background: -moz-linear-gradient(center top , #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314 100%) repeat scroll 0 0 transparent;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAA290), color-stop(14%,#F77B62), color-stop(87%,#EC3120), color-stop(100%,#CE2314)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* W3C */
+    border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1;
+    padding: 0.1em 0.4em 0.2em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);position: absolute;
+font-weight:bold;
+margin-left:32.5px;
+margin-top:2.5px;
+z-index:2 !important;
+}
+.foralerts1
+{
+background: #ff0000; /* Old browsers */
+       background: -moz-linear-gradient(center top , #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314 100%) repeat scroll 0 0 transparent;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAA290), color-stop(14%,#F77B62), color-stop(87%,#EC3120), color-stop(100%,#CE2314)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* W3C */
+	border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1;
+    padding: 0.1em 0.4em 0.2em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);position: absolute;
+font-weight:bold;
+margin-left:32.5px;
+margin-top:2.5px;
+z-index:2 !important;
+}
+.foralerts2
+{
+background: #ff0000; /* Old browsers */
+       background: -moz-linear-gradient(center top , #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314 100%) repeat scroll 0 0 transparent;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAA290), color-stop(14%,#F77B62), color-stop(87%,#EC3120), color-stop(100%,#CE2314)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #FAA290 0%,#F77B62 14%,#EC3120 87%,#CE2314 100%); /* W3C */
+	border-radius: 2px 2px 2px 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 1;
+    padding: 0.1em 0.4em 0.2em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);position: absolute;
+font-weight:bold;
+margin-left:32.5px;
+margin-top:2.5px;
+z-index:2 !important;
+}
+ .mole1     {
+position:absolute;
+width:100%;
+float:center;
+color:white;
+background-color:#BB3333;
+display:none;
+ z-index:1;
+}
+.mole3     {
+margin:auto;
+width:100%;
+position:absolute;
+background:transparent;
+display:none;
+z-index:300;
+height:22px;
+}
+
+.mole5{
+height:21px;
+display:table;
+margin:auto;
+-moz-box-shadow: 0px 2px 3px #dbdbdb;/*FF 3.5+*/
+-webkit-box-shadow: 0px 2px 3px #dbdbdb;/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+box-shadow: 0px 2px 3px #dbdbdb;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+
+
+}
+.mole4   {
+margin:auto;
+position:relative;
+background-color:#f9edbe;
+border:solid 1.5px #f0c36d;
+border-radius:0% 0% 7% 7%;
+display:none;
+ z-index:400;
+}
+.text
+{
+font-weight:bold;
+}
+.text1
+{
+font-weight:bold;
+display:none;
+}
+.text2
+{
+font-weight:bolder;
+line-height:25px;
+letter-spacing:-1px;
+display:block;
+color:black;
+padding-left:11px;
+padding-right:11px;
+padding-top:3px;
+font-size:12.5px;
+
+}
+
+.notificationPanel{
+border:1px solid black;
+width:30%;
+}
+.username{
+line-height: 40px;
+background-color:#ebebeb;
+color:#119DC9;
+line-height: 40px;
+font-size: 11pt;
+margin-left:4%;
+width: 96%;
+word-wrap: break-word;
+margin-top:8%;
+}
+.practiceName{
+background-color:#ebebeb;
+color:#119DC9;
+line-height: 30px;
+font-size: 13pt;
+margin-left:4%;
+width: 93%;
+word-wrap: break-word;
+margin-top:2%;
+border-bottom: 1px solid #CDCDCD;
+}
+.menuPanel{
+background-color:#ebebeb;
+}
+.searchPanel {
+background-color:#FFFFFF;
+margin-left:8px;
+margin-top:7%;
+
+}
+
+
+   </ui:style>
+
+
+	<g:HTMLPanel styleName='{style.viewport}'>
+		<g:HTMLPanel styleName="{style.menu}" ui:field="menu">
+		    
+		    
+		        <g:Label ui:field="practiceName" styleName='{style.practiceName}'>ReachToday</g:Label>
+		    
+		
+			    <g:HorizontalPanel styleName='{style.searchPanel}' ui:field="searchPanel">
+						<custom_search:SearchControl ui:field="control" debugId="mainTabletSearch"></custom_search:SearchControl>
+			 </g:HorizontalPanel>
+		
+			
+			<g:HTMLPanel ui:field="menu1" styleName='{style.menuPanel}'>
+			<g:Label ui:field="userName" styleName='{style.username}'>Hari Kishore</g:Label>
+			 
+			<custom:FastButton backgroundImage='{resources.home}'
+				normalStyle='{resources.tabletstyles.menuNormal}' holdPressStyle='{resources.tabletstyles.menuHoldPress}'
+				text="Home" ui:field="home" />
+			
+				
+			<custom:FastButton normalStyle='{resources.tabletstyles.menuNormal}'
+				holdPressStyle='{resources.tabletstyles.menuHoldPress}' text="Refresh"
+				ui:field="Refresh" />
+			
+			<custom:FastButton normalStyle='{resources.tabletstyles.menuNormal}'
+				holdPressStyle='{resources.tabletstyles.menuHoldPress}' text="Log Out"
+				ui:field="logout" />
+		</g:HTMLPanel> 
+</g:HTMLPanel>
+	<g:HTMLPanel styleName="{style.page}" ui:field="page">
+		    <header>
+		        
+			   <custom:FastButton backgroundImage='{resources.menuicon}'
+					normalStyle='{resources.tabletstyles.showhideLeftMenuNormal}'
+					holdPressStyle='{resources.tabletstyles.showhideLeftMenuHoldPress}'
+					text="" ui:field="showhidemenuleft" debugId="leftMenuBtn" />
+			
+			   
+				<div class='{style.icons}'>
+				<g:HorizontalPanel styleName="{style.head}" ui:field="head" horizontalAlignment="center" verticalAlignment="top">
+						<g:HorizontalPanel ui:field="messagealert" debugId="messagealert">
+							<g:HorizontalPanel styleName="{style.alert}" ui:field="messagealertpanel"></g:HorizontalPanel>
+							<custom:FastButton backgroundImage='{resources.messagenotification}'
+								normalStyle='{resources.tabletstyles.buttonNormal}'
+								holdPressStyle='{resources.tabletstyles.buttonHoldPress}' text=""
+								ui:field="messagenotification"  debugId='messagesIcon'/>
+						</g:HorizontalPanel>
+						
+					</g:HorizontalPanel>
+				</div>
+				
+				
+				<custom:FastButton backgroundImage='{resources.menuiconright}'
+					normalStyle='{resources.tabletstyles.showhideRightMenuNormal}'
+					holdPressStyle='{resources.tabletstyles.showhideRightMenuHoldPress}'
+					text="" ui:field="showhidemenuright" debugId="rightMenuBtn" />
+		
+					</header>
+					<div>
+				<g:HTMLPanel styleName='{style.mole1}' ui:field="nMole1">
+				    <g:HorizontalPanel width="100%" ui:field="nMole2">
+					<g:Label ui:field="text1" text="ERROR" styleName='{style.text1}'
+						horizontalAlignment='ALIGN_CENTER' width="100%"></g:Label>
+					<custom:FastButton normalStyle='{resources.tabletstyles.showhideErrorCloseNormal}' holdPressStyle='{resources.tabletstyles.showhideErrorCloseHoldPress}' text="Close" ui:field="text2" />
+					</g:HorizontalPanel>
+				</g:HTMLPanel>
+				<g:HTMLPanel styleName='{style.mole3}' ui:field="nMole3">
+					<g:FlowPanel styleName='{style.mole5}' ui:field="nMole5">
+					    <g:FlowPanel styleName='{style.mole4}' ui:field="nMole4">
+						<g:Label ui:field="text3" styleName='{style.text2}'
+							horizontalAlignment='ALIGN_CENTER' width="100%"></g:Label>
+					</g:FlowPanel>
+					</g:FlowPanel>
+				</g:HTMLPanel>
+			</div>
+				<g:SimplePanel styleName="{style.display}" ui:field="mainDisplayPanel" />
+		</g:HTMLPanel>
+		
+		
+		<g:HTMLPanel styleName="{style.menux}" ui:field="menux">
+			<div>
+
+				<g:FlowPanel ui:field="rightmenu">
+				</g:FlowPanel>
+			</div>
+		</g:HTMLPanel>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

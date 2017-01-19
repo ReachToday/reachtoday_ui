@@ -1,0 +1,50 @@
+.headerStyles {
+	color: #000;
+	background-color: #F6F6F7;
+	border-bottom: 1px solid #E5E5EB;
+	height: 47px;
+	width: 100%;
+	top:0;
+	position:relative;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+.loginScroller{
+	background-color: #CCCCCC;
+	width: 100%;
+}
+.loginFlowPanel{
+	width:98%;
+	float: right;
+}
+.loginTextBox{
+	background-color: #FFFFFF;
+	width: 98%;
+	float: left;
+	border-radius:8px;
+}
+.loginBtn{
+	width: 80%;
+	background-color: #ffffff !important;
+	text-align: center;
+	border-radius:8px;
+	float:right;
+	position: relative;
+	left: 0px;
+	margin: 5px;
+	font-weight: bold;
+	
+}
+.showPassword{
+	position: absolute;
+	margin-top: -23px;
+	line-height: 0px;
+	float: right;
+	margin-left: 84%;
+	color: #000000;
+}
+.loginLabel{
+	color: #564f4f;
+	font-size: 18px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+			 xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton">
+			 <ui:with field="resources" type="com.reachtoday.client.resource.MobileResources"/>
+	<ui:style>
+		.fontstyle {
+			font-weight: bold;
+		}
+		
+		.widgetStyle {
+			margin-left: 20px;
+			margin-top: 20px;
+			border-radius:5px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: #A0A0A0;
+			
+		}
+		.Name {
+			font-family: "Helvetica Neue", Helvetica, sans-serif;
+			color: #000;
+			line-height: 20px;
+			font-size: 20px;
+			margin:auto;
+			width: 100%;
+			word-wrap: break-word;
+			vertical-align: middle;
+			padding-right: 30px;
+		}
+		.container{
+	width:100%;
+	height: 100%;
+	position: absolute;
+}
+	</ui:style>
+	<g:HTMLPanel styleName='{style.container}' debugId="mainCntr" ui:field="mainCntr">
+	<g:VerticalPanel ui:field="SearchWidgetCntr" debugId="SearchWidgetCntr">
+	<g:HorizontalPanel ui:field="BusNumberWdgtCntr" debugId="BusNumberWdgtCntr" styleName="{style.widgetStyle}">
+	<custom:FastButton normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' text="&#xe600;"
+						ui:field="bussymbol" />
+				<g:Label ui:field="busName" styleName='{style.Name}'
+					text="Searchbus"></g:Label>
+	</g:HorizontalPanel>
+	<g:HorizontalPanel ui:field="RouteWdgtCntr" debugId="RouteWdgtCntr" styleName="{style.widgetStyle}">
+	<custom:FastButton normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' text="&#xe603;"
+						ui:field="routesymbol" />
+				<g:Label ui:field="routeName" styleName='{style.Name}'
+					text="Searchroute"></g:Label>
+	</g:HorizontalPanel>
+	<g:HorizontalPanel ui:field="FriendWdgtCntr" debugId="FriendWdgtCntr" styleName="{style.widgetStyle}">
+	<custom:FastButton normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' text="&#xe601;"
+						ui:field="friendsymbol" />
+				<g:Label ui:field="friendName" styleName='{style.Name}'
+					text="Friendfinder"></g:Label>
+	</g:HorizontalPanel>
+	<g:HorizontalPanel ui:field="LoginWdgtCntr" debugId="LoginWdgtCntr" styleName="{style.widgetStyle}" >
+	<custom:FastButton normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' text="&#xe602;"
+						ui:field="loginsymbol" />
+				<g:Label ui:field="loginName" styleName='{style.Name}'
+					text="Login"></g:Label>
+	</g:HorizontalPanel>
+	</g:VerticalPanel>
+	</g:HTMLPanel>
+
+	</ui:UiBinder>

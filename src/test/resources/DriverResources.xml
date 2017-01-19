@@ -1,0 +1,19 @@
+<browser>
+<drivers>
+<driver id="firefox">
+<driver-name>org.openqa.selenium.firefox.FirefoxDriver</driver-name>
+<property>webdriver.chrome.driver</property>
+<property-location>/home/software/Desktop/chromedriver/chromedriver</property-location>
+</driver>
+<driver id="chrome">
+<driver-name>org.openqa.selenium.chrome.ChromeDriver</driver-name>
+<property>webdriver.chrome.driver</property>
+<property-location>/home/software/Desktop/chromedriver/chromedriver</property-location>
+</driver>
+</drivers>
+<urls>
+<base-url id="1">
+<baseurl>http://localhost/login.html</baseurl>
+</base-url>
+</urls>
+</browser>

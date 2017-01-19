@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='reachtoday'>
+	<!-- Inherit the core Web Toolkit stuff. -->
+
+
+
+	<inherits name='com.google.gwt.user.User' />
+
+	<!-- We need the JUnit module in the main module, -->
+	<!-- otherwise eclipse complains (Google plugin bug?) -->
+
+	<!--<inherits name='com.google.gwt.junit.JUnit' /> -->
+
+	<!-- Inherit the default GWT style sheet. You can change -->
+	<!-- the theme of your GWT application by uncommenting -->
+	<!-- any one of the following lines. -->
+
+	<!--inherits name='com.google.gwt.user.theme.standard.Standard' /> -->
+	<!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+	<!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/> -->
+	<!-- <stylesheet src="styles-global.css"/> -->
+
+	<!--GWT-QUERY -->
+	<!-- <inherits name='com.google.gwt.query.Query'/> -->
+
+
+
+	<!--SuperDev Mode -->
+
+<!-- enable the SuperDevMode book marklets  -->
+<!-- <add-linker name="xsiframe"/>
+<set-configuration-property name="devModeRedirectEnabled" value="true"/> -->
+
+<!--  enable source maps -->
+<set-property name="compiler.useSourceMaps" value="true" />
+
+
+	<set-property name="user.agent" value="safari" />
+
+	<!-- Other module inherits -->
+
+	<!-- We need the MVP stuff (Activity and Place -->
+	<!-- I am also using DepInj with Gin (Inject) -->
+	<!-- and Resource for client bundle and stuff (not used yet) -->
+
+	<inherits name="com.google.gwt.activity.Activity" />
+	<inherits name="com.google.gwt.place.Place" />
+	<inherits name="com.google.gwt.inject.Inject" />
+	<inherits name="com.google.gwt.resources.Resources" />
+	<inherits name="com.google.gwt.user.Debug" />
+	<inherits name="org.fusesource.restygwt.RestyGWT"/>
+
+	<!-- Specify the app entry point class. -->
+	<entry-point class='com.reachtoday.client.reachtoday' />
+
+	<!-- Specify the paths for translatable code -->
+	<source path='client' />
+	<source path='shared' />
+
+	<!-- Form Factors -->
+	<inherits name="com.reachtoday.FormFactor" />
+
+	<!-- For JSON Ajax call -->
+	<inherits name="com.google.gwt.http.HTTP" />
+
+	<!-- For Logging Framework src: https://developers.google.com/web-toolkit/doc/latest/DevGuideLogging -->
+	<inherits name="com.google.gwt.logging.Logging" />
+	<set-property name="gwt.logging.enabled" value="FALSE" />
+
+	<define-configuration-property name="gin.ginjector"
+		is-multi-valued="false" />
+	<set-configuration-property name='gin.ginjector'
+		value='com.reachtoday.client.ioc.ClientGinjector' />
+
+</module>

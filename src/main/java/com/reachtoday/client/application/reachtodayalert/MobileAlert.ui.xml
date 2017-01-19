@@ -1,0 +1,31 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton">
+	<ui:with field="resources"
+		type="com.reachtoday.client.resource.MobileResources" />
+
+
+	<g:HTMLPanel>
+		<g:PopupPanel ui:field="alertPopup" glassEnabled="true"
+			autoHideEnabled="true">
+			<g:VerticalPanel ui:field="popupHolder">
+				<g:TextBox ui:field="username" >
+				</g:TextBox>
+				<g:TextBox ui:field="email" >
+				</g:TextBox>
+				<g:TextBox  ui:field="password" >
+				</g:TextBox>
+				<g:HorizontalPanel width="100%" ui:field="confirmHz">
+					<custom:FastButton ui:field="okButton" text="Login"
+						debugId="okButton">
+					</custom:FastButton>
+					<custom:FastButton ui:field="regButton" text="Register"
+						debugId="regButton">
+					</custom:FastButton>
+					<g:Label ui:field="newuser">Signup</g:Label>
+				</g:HorizontalPanel>
+			</g:VerticalPanel>
+		</g:PopupPanel>
+	</g:HTMLPanel>
+</ui:UiBinder> 

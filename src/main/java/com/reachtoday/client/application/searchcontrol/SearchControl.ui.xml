@@ -1,0 +1,26 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:d="urn:import:com.google.gwt.dom.client"
+	xmlns:s="urn:import:com.reachtoday.client.application.searchcontrol">
+	<ui:with field="resources"
+		type="com.reachtoday.client.resource.TabletResources" />
+	<ui:with field="cellListResources"
+		type="com.reachtoday.client.resource.CellListStyle" />
+	<ui:style
+		type="com.reachtoday.client.application.searchcontrol.SearchControl.SearchControlStyles">
+		.scrollable {
+			height: 400px;
+			width: 250px;
+			border: 1px solid #ccc;
+			text-align: left;
+		}
+		.searchBoxStyle{
+			padding: 0 0 0 5px !important;
+			background: none repeat scroll 0 0 #FFFFFF;
+		}
+	</ui:style>
+	
+	<g:HTMLPanel ui:field="mainPanel">
+	</g:HTMLPanel>
+	
+</ui:UiBinder>

@@ -1,0 +1,692 @@
+@external gwt-SuggestBox,gwt-SuggestBoxPopup,item,item-selected,suggestPopupContent;
+/* make keyframes that tell the start state and the end state of our object */
+         @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+         @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+         @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+
+.pageloadFadeIn {
+     opacity:0; /* make things invisible upon start */
+     -webkit-animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+     -moz-animation:fadeIn ease-in 1;
+     animation:fadeIn ease-in 1;
+
+     -webkit-animation-fill-mode:forwards; /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+     -moz-animation-fill-mode:forwards;
+     animation-fill-mode:forwards;
+
+     -webkit-animation-duration:0.2s;
+     -moz-animation-duration:0.2s;
+     animation-duration:0.2s;
+
+}
+
+
+.showhideLeftMenuNormal {
+background-position: center;
+background-repeat: no-repeat;
+cursor: pointer;
+height: 43px;
+left: 0;
+width: 5%;
+float:left;
+z-index: 2;
+}
+
+.showhideLeftMenuHoldPress {
+background-position: center;
+background-repeat: no-repeat;
+cursor: pointer;
+height: 43px;
+left: 0;
+position: absolute;
+width: 5%;
+float:left;
+z-index: 2;
+}
+
+.showhideRightMenuNormal {
+
+     position: absolute;
+right: 0px;
+top: 0px;
+cursor: pointer;
+background-repeat: no-repeat;
+height: 43px;
+width: 5%;
+background-position: center;
+z-index: 2;
+
+}
+
+.showhideRightMenuHoldPress {
+
+     position: absolute;
+right: 0px;
+top: 0px;
+cursor: pointer;
+background-repeat: no-repeat;
+height: 43px;
+width: 5%;
+background-position: center;
+z-index: 2;
+
+
+}
+.menuNormal {
+
+ position: relative;
+ cursor:pointer;
+ background-repeat:no-repeat;
+     border-colapse:colapse;
+     background-size:29px 29px;
+display: block;
+list-style: none;
+
+line-height: 40px;
+padding: 8px 0 3px 12px;
+background-color: #ebebeb;
+
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+font-size: 16px;
+color: #119DC9;
+background-position: 5% center;
+
+     }
+  .menuNormal span{
+     margin-left: 39px;
+
+}
+
+.menuHoldPress{
+     position: relative;
+     cursor:pointer;
+     background-repeat:no-repeat;
+     border-colapse:colapse;
+     background-size:29px 29px;
+display: block;
+list-style: none;
+
+line-height: 40px;
+padding: 8px 0 3px 12px;
+background-color: #ebebeb;
+
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+font-size: 16px;
+color: #1182a2;
+text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+background-position: 5% center;
+}
+
+ .menuHoldPress span{
+     margin-left: 39px;
+     }
+
+.showhideErrorCloseNormal {
+     position: relative;
+     font-family:kalinga;
+font-weight:bold;
+display:none;
+cursor: pointer;
+background-repeat: no-repeat;
+z-index: 1;
+
+}
+
+.showhideErrorCloseHoldPress {
+
+     position: relative;
+     font-family:kalinga;
+font-weight:bold;
+display:none;
+cursor: pointer;
+background-repeat: no-repeat;
+z-index: 1;
+
+
+}
+.buttonNormal {
+     background-repeat: no-repeat;
+     cursor: pointer;
+     height: 39px;
+     margin-bottom: 1px;
+     margin:7px 10px 0px 10px;
+     width: 34px;
+
+}
+
+.buttonHoldPress {
+     background-repeat: no-repeat;
+     cursor: pointer;
+     height: 39px;
+     margin-bottom: 1px;
+     margin:7px 10px 0px 10px;
+     width: 34px;
+
+}
+.makePanelTransparent{
+       opacity:0.5;
+       -moz-opacity:0.50;
+       filter:literal("alpha(opacity=50)");
+}
+
+
+.leftPagerPanel{
+     margin-left:-5%;
+}
+
+
+/* StartPoint:Mandatory Styles For iPad Used in Glace */
+
+/* Styles which is used to prevent selection of content by the user */
+.userSelectNone {
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Used for smooth scrolling in Ipad */
+.smoothScrolling {
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Popover styles for PopupPanel */
+.popOverStyle {
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 8px;
+	min-height:300px;
+	z-index: 5;
+}
+
+/* Header styles for all the pages */
+.headerStyles {
+	color: #000;
+	background-color: #F6F6F7;
+	border-bottom: 1px solid #E5E5EB;
+	height: 50px;
+	width: 100%;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Header Label styles for all the pages */
+.headerLabelStyles {
+	font-family: HelveticaNeue-Medium,"Helvetica Neue",  sans-serif;
+	color: #000;
+	font-size: 18px;
+}
+
+/* For SOAP sub Header styles for all the pages */
+.soapSubHeaderStyles {
+	background-color: #EFEFF4;
+	height: 50px;
+	width: 100%;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* For SOAP sub Header Label styles for all the pages */
+.soapHeaderLabelStyles {
+	font-family: HelveticaNeue-Medium,"Helvetica Neue",  sans-serif;
+	color: #6D6D72;
+	font-size: 17px;
+	margin-left: 15px;
+
+}
+
+/* Action button which is in Blue color */
+.fastButtonBlue {
+	background-color: transparent !important;
+	color: #2087FC !important;
+	float: right;
+	font-size: 18px;
+	cursor: pointer;
+	height: 44px;
+	padding: 10px 15px 0;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* On hold style for action button which is in Blue color */
+.fastButtonBlueHold {
+	background-color: transparent !important;
+	color: #BCDBFE !important;
+	float: right;
+	font-size: 18px;
+	cursor: pointer;
+	height: 44px;
+	padding: 10px 15px 0;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Action button which is in Black color */
+.fastButtonBlack {
+	background-color: transparent !important;
+	color: #000 !important;
+	font-size: 18px;
+	cursor: pointer;
+	height: 44px;
+	padding: 10px 15px 0;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* On hold style for action button which is in Black color */
+.fastButtonBlackHold {
+	background-color: transparent !important;
+	color: #6e6e6e !important;
+	font-size: 18px;
+	cursor: pointer;
+	height: 44px;
+	padding: 10px 15px 0;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Action button light grey */
+.fastButtonGrey {
+	border: none;
+	color: #AAA;
+	cursor: pointer;
+	float: right;
+	font-size: 18px;
+	height: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* On hold press style for action button light grey*/
+.fastButtonGreyHold {
+	border: none;
+	color: #F5F5F5;
+	cursor: pointer;
+	float: right;
+	font-size: 18px;
+	height: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Action button which is in Blue color */
+.iconBlue {
+	background-color: transparent !important;
+	color: #2087FC !important;
+	font-family: icons;
+	float: right;
+	cursor: pointer;
+	height: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* On hold style for action button which is in Blue color */
+.iconBlueHold {
+	background-color: transparent !important;
+	color: #BCDBFE !important;
+	font-family: icons;
+	float: right;
+	cursor: pointer;
+	height: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Non clickable black label*/
+.blackLabel {
+	color: #000;
+	font-size: 18px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Non clickable red label*/
+.redLabel {
+	color: #F48268;
+	font-size: 18px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Non clickable light grey label*/
+.lightGreyLabel {
+	color: #AAA;
+	font-size: 18px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Non clickable dark grey label */
+.darkGreyLabel {
+	color: #8E8E93;
+	font-size: 18px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Navigation arrow left (>)*/
+.navigationArrow {
+	position:absolute;
+	border: none;
+	color: #2087FC;
+	cursor: pointer;
+	float: right;
+	font-family: icons;
+	font-size: 35px;
+	height: 50px;
+	width: 44px;
+	line-height:48px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Hold press style for navigation arrow left (>) */
+.navigationArrowHold {
+	position:absolute;
+	border: none;
+	color: #BCDBFE;
+	cursor: pointer;
+	float: right;
+	font-family: icons;
+	font-size: 35px;
+	height: 50px;
+	width: 44px;
+	line-height:48px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Action button which is in Blue color */
+.navigationText {
+	position:absolute;
+	background-color: transparent !important;
+	color: #2087FC !important;
+	float: right;
+	font-size: 18px;
+	cursor: pointer;
+	height: 50px;
+    padding-top: 14px;
+    left:35px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* On hold style for action button which is in Blue color */
+.navigationTextHold {
+	position:absolute;
+	background-color: transparent !important;
+	color: #BCDBFE !important;
+	float: right;
+	font-size: 18px;
+	cursor: pointer;
+	height: 50px;
+    padding-top: 14px;
+    left:35px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Navigation arrow right (<)*/
+.arrowToRight{
+	border: none;
+	color: #AAA;
+	cursor: pointer;
+	float: left;
+	font-family: icons;
+	font-size: 35px;
+	height: 44px;
+	padding: -1px 4px;
+	width: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Hold press style for navigation arrow right (<) */
+.arrowToRightHold {
+	border: none;
+	color: #F5F5F5;
+	cursor: pointer;
+	float: left;
+	font-family: icons;
+	font-size: 35px;
+	height: 44px;
+	padding: -1px 4px;
+	width: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Navigation arrow right (<)*/
+.arrowToLeft{
+	border: none;
+	color: #2087FC;
+	cursor: pointer;
+	float: left;
+	font-family: icons;
+	font-size: 35px;
+	height: 44px;
+	padding: -1px 4px;
+	width: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Hold press style for navigation arrow right (<) */
+.arrowToLeftHold {
+	border: none;
+	color: #BCDBFE;
+	cursor: pointer;
+	float: left;
+	font-family: icons;
+	font-size: 35px;
+	height: 44px;
+	padding: -1px 4px;
+	width: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* TextArea styles */
+.textArea {
+	background: transparent;
+	border: none;
+	color: #aAa;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 16px;
+	height: 100px;
+	max-height: 100px;
+	margin: 10px 0px;
+	overflow: scroll;
+	resize: none;
+	width: 100%;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Selection tick button styles (non-active) */
+.selectionTickButton{
+	border: none;
+	color: #AAA;
+	cursor: pointer;
+	float: right;
+	font-family: icons;
+	font-size: 20px;
+	height: 44px;
+	padding: 10px 10px;
+	width: 44px;
+	-webkit-overflow-scrolling: touch;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* //Selection tick button styles (active) */
+.selectionTickButtonActive{
+	border: none;
+	color: #2087FC;
+	cursor: pointer;
+	float: right;
+	font-family: icons;
+	font-size: 20px;
+	height: 44px;
+	padding: 10px 10px;
+	width: 44px;
+	-webkit-transition: color .218s;
+	-moz-transition: .218s;
+	-o-transition: color .218s;
+	transition: color .218s;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Styles for alert count (notification number) */
+.alertCount{
+	background-color: #8A98B2;
+	border-radius: 9px;
+	color: #FFF;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 1px 6px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Category title styles */
+.categoryTitle{
+	height:40px;
+	border:none;
+	color: #6D6D72;
+	background-color: #EFEFF4;
+	font-size:18px;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+/* Border bottom style for every list row */
+.borderBottom{
+	border-bottom: 1px solid #E5E5EB;
+}
+
+.navigationPanel{
+	position: absolute;
+	float: left;
+}
+
+/*style for loading image in all pages*/
+.loadingImage{ 
+    display: block; 
+    margin: 0; 
+    width: 2.75em; 
+    height:  2.75em; 
+    padding: .0625em; 
+    -webkit-border-radius: 2.25em; 
+    border-radius: 2.25em; 
+    filter: Alpha(Opacity=18); 
+    opacity: .18; 
+    z-index: 9999999; 
+    border:0; 
+ }
+ 
+ .glaceIcons{
+ 	font-family: glaceIcons;
+ }
+ 
+ .datePopupGlass {
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 6;
+}

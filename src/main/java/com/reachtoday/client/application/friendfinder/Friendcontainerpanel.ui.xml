@@ -1,0 +1,210 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton">
+	<ui:with field="resources"
+		type="com.reachtoday.client.resource.MobileResources" />
+	<ui:style>
+		@
+		-webkit-keyframes fadeIn {from { opacity:0;
+			
+		}
+		
+		to {
+			opacity: 1;
+		}
+		
+		}
+		@
+		-moz-keyframes fadeIn {from { opacity:0;
+			
+		}
+		
+		to {
+			opacity: 1;
+		}
+		
+		}
+		@
+		keyframes fadeIn {from { opacity:0;
+			
+		}
+		
+		to {
+			opacity: 1;
+		}
+		
+		}
+		.flow {
+			width: 100%;
+			font-size: 15px;
+			font-weight: normal;
+			line-height: 100%;
+			color: #656666;
+			opacity: 1; /* make things invisible upon start */
+			-webkit-animation: fadeIn ease-in 1;
+			/* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+			-moz-animation: fadeIn ease-in 1;
+			animation: fadeIn ease-in 1;
+			-webkit-animation-duration: 0.2s;
+			-moz-animation-duration: 0.2s;
+			animation-duration: 0.2s;
+		}
+		
+		.label {
+	text-transform: capitalize;
+			margin-top: 10px;
+			margin-left: 6px;
+			font-size: medium;
+			margin-bottom: 11px;
+			letter-spacing: 0.1px;
+			color: #000;
+			width: 96%;
+		}
+		
+		.horzi {
+			background-color: #F6F6F7;
+			height: 35px;
+		}
+		
+		.showhideMenuNormal {
+			background-color: #199EC9;
+			margin: 0px;
+			padding: 0px;
+			border-top-color: #199ec9;
+			border-bottom-color: #199ec9;
+			min-height: 38px;
+			min-width: 40px;
+			vertical-align: middle;
+			background-image: no-repeat 5px;
+			background-position: 70% 60%;
+			vertical-align: middle;
+			cursor: pointer;
+			background-repeat: no-repeat;
+		}
+		
+		.showhideMenuHoldPress {
+			background-color: #199EC9;
+			margin: 0px;
+			padding: 0px;
+			border: 0px;
+			min-height: 39px;
+			min-width: 40px;
+			border: none;
+			vertical-align: middle;
+			background-image: no-repeat 5px;
+			background-position: 70% 60%;
+			vertical-align: middle;
+			cursor: pointer;
+			background-repeat: no-repeat;
+		}
+		
+		.top {
+			float: left;
+			width: 97%;
+			margin: 5px 20px 10px 5px;
+			border: 1px solid #E5E5EB;
+			height: 125px;
+		}
+		
+		.buttonhorizontalpanel {
+			margin: 0px;
+			background-color: #EDEDED;
+		}
+		
+		.buttonhorizontalpanel {
+			float: right;
+		}
+		.componentdata {
+			background-color: #ffffff;
+			overflow: hidden;
+			width: 100%;
+		}
+		
+		.addButtons {
+			background-color: #DFDFDF;
+			margin-top: 0%;
+			margin-bottom: 2%;
+		}
+		.userProfilePicStyle {
+	border-radius: 29px 29px 29px 29px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+	display: block;
+	height: 56px;
+	width: 56px;
+	margin:10px;
+	background-repeat: no-repeat;
+}
+.statusandinfopanel
+{
+	width:100%;
+	margin-top:10px;
+float: right;
+	}
+	.infopanel{
+
+	}
+
+.statusbutton {
+   border-top: 1px solid #0d87d9;
+   background: #0d87d9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#0d87d9), to(#0d87d9));
+   background: -webkit-linear-gradient(top, #0d87d9, #0d87d9);
+   background: -moz-linear-gradient(top, #0d87d9, #0d87d9);
+   background: -ms-linear-gradient(top, #0d87d9, #0d87d9);
+   background: -o-linear-gradient(top, #0d87d9, #0d87d9);
+   padding: 6.5px 13px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #cccccc;
+   font-size: 13px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   width: 100%;
+	float: right;
+   }
+	
+	</ui:style>
+	<g:HTMLPanel styleName='{style.top}' ui:field="componentouterpanel">
+		<g:VerticalPanel ui:field="componentinnerpanel"
+			styleName='{style.flow}'>
+			<g:HorizontalPanel styleName='{style.horzi}'
+				ui:field="headerpanel">
+				<g:HorizontalPanel ui:field="headingPanel" width="100%">
+					<g:Label styleName='{style.label}' ui:field="heading" text=""></g:Label>
+				</g:HorizontalPanel>
+			</g:HorizontalPanel>
+			<g:HorizontalPanel ui:field="componentData" styleName='{style.componentdata}'>
+			<custom:FastButton ui:field="userProfilePic" backgroundImage="{resources.user}" 
+						normalStyle="{style.userProfilePicStyle}"
+							holdPressStyle="{style.userProfilePicStyle}" />
+							<g:VerticalPanel ui:field="statusandinfopanel" debugId="statusandinfopanel" styleName='{style.statusandinfopanel}'>
+							<g:FlowPanel ui:field="infopanel" debugId="infopanel" styleName='{style.infopanel}'>
+							<g:HorizontalPanel width="100%">
+							<g:Label ui:field="email" width="15%" text="Mail" ></g:Label>
+							<g:Label ui:field="emailvalue" width="85%" text="" styleName="{resources.mobilestyles.ellipsis}"></g:Label></g:HorizontalPanel>
+							<g:HorizontalPanel width="100%">
+							<g:Label ui:field="name" width="15%" text="Name" ></g:Label>
+							<g:Label ui:field="namevalue" width="85%" text="" styleName="{resources.mobilestyles.ellipsis}"></g:Label></g:HorizontalPanel>
+							</g:FlowPanel>
+							<g:HorizontalPanel>
+							<g:Button ui:field="mapbutton" debugId="mapbutton" styleName='{style.statusbutton}' text="View" visible="false"></g:Button>
+							<g:Button ui:field="statusbutton" debugId="statusbutton" styleName='{style.statusbutton}' text=""></g:Button>
+	</g:HorizontalPanel>						
+							</g:VerticalPanel>
+			</g:HorizontalPanel>
+		</g:VerticalPanel>
+	<g:VerticalPanel ui:field="mapLoadingPanel" styleName='{style.flow}' width="100%">
+	</g:VerticalPanel>
+	<g:VerticalPanel   ui:field="loadingimagevertical" verticalAlignment="middle"
+					horizontalAlignment="center" width="100%"  visible="true" >
+					<g:Image  ui:field="loadingimg" url="images/ajax-loader.gif" styleName='{resources.mobilestyles.loadingImage}'>
+					</g:Image>
+				</g:VerticalPanel>
+	</g:HTMLPanel>
+</ui:UiBinder>

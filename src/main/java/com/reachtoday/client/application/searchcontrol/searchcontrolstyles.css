@@ -1,0 +1,24 @@
+.searchClose{
+background-color: #FFFFFF;
+     cursor: pointer;
+   margin-left:-28px;
+      height: 25px !important;
+     width: 25px !important;
+}
+
+.searchClosePress{
+      background-color: #FFFFFF;
+    cursor: pointer;
+    margin-left:-28px;
+      height: 25px !important;
+     width: 25px !important;
+     }
+
+
+.search{
+      background-color: #FFFFFF !important;
+     height: 24px !important;
+    vertical-align: middle;
+      width: 25px !important;
+     margin-left:-28px;
+}

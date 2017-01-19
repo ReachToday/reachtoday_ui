@@ -1,0 +1,18 @@
+/*Fast Toggle Checkbox*/
+.unchecked {
+	cursor: pointer;
+	height: 32px;
+	width: 28px;
+	background-repeat: no-repeat;
+}
+
+.text {
+	font-size: 16px;
+	color: #6e6e6e;
+	padding: 3px;
+}
+
+.container {
+	display: table;
+	vertical-align: middle;
+}

@@ -1,0 +1,101 @@
+.popupStyle {
+	border-radius: 14px 14px 14px 14px;
+	width: 500px;
+	height: 150px;
+	background-color:#F3F3F3;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	-webkit-user-select: none; /* Chrome all / Safari all  */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+}
+
+.popupHolder {
+	
+}
+
+.messageLabel {
+	max-width: 320px;
+	color: #000;
+}
+
+.buttonStyle {
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	background-color:#F3F3F3;
+	opacity:1;
+	font-weight:bold;
+	padding: 15px 0px;
+	border-radius: 0px 0px 14px 14px;
+	border-top: 1px solid #BABABA;
+	color: #007AFF;
+}
+
+.buttonHoldStyle {
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	background-color:#D9D9D9;
+	font-weight:bold;
+	opacity:.7;
+	padding: 15px 0px;
+	border-radius: 0px 0px 14px 14px;
+	border-top: 1px solid #BBB;
+	color: #007AFF;
+	-webkit-transition:background .218s;
+	-moz-transition: background .218s;
+	-o-transition:background .218s;
+	transition: background .218s;
+	
+}
+
+.buttonStyleOk {
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	background-color:#F3F3F3;
+	opacity:1;
+	font-weight:bold;
+	padding: 15px 0px;
+	border-radius: 0px 0px 0px 14px;
+	border-top: 1px solid #BABABA;
+	border-Right: 1px solid #BABABA;
+	color: #007AFF;
+}
+
+.buttonHoldStyleOk {
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	background-color:#D9D9D9;
+	font-weight:bold;
+	opacity:.7;
+	padding: 15px 0px;
+	border-radius: 0px 0px 0px 14px;
+	border-top: 1px solid #BBB;
+	color: #007AFF;
+	-webkit-transition:background .218s;
+	-moz-transition: background .218s;
+	-o-transition:background .218s;
+	transition: background .218s;
+	
+}
+
+.buttonHoldStyleCancel {
+	width: 100%;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 18px;
+	background-color:#D9D9D9;
+	font-weight:bold;
+	opacity:.7;
+	padding: 15px 0px;
+	border-radius: 0px 0px 14px 0px;
+	border-top: 1px solid #BBB;
+	color: #007AFF;
+	-webkit-transition:background .218s;
+	-moz-transition: background .218s;
+	-o-transition:background .218s;
+	transition: background .218s;
+	
+}

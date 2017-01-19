@@ -1,0 +1,63 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton">
+  <ui:with field="resources" type="com.reachtoday.client.resource.MobileResources"/>
+	<ui:style>
+	
+	</ui:style>
+	<g:HTMLPanel width="100%" >
+	       <g:HorizontalPanel styleName='{resources.loginMobileStyles.headerStyles}'
+			ui:field="headerPanel" debugId="headerPanel" horizontalAlignment="center" >
+			<custom:FastButton normalStyle='{resources.mobilestyles.navigationArrow}'
+				holdPressStyle='{resources.mobilestyles.navigationArrowHold}' text="4"
+				ui:field="loginBackBtn" visible="false">
+			</custom:FastButton>
+			<custom:FastButton normalStyle='{resources.mobilestyles.navigationText}'
+				holdPressStyle='{resources.mobilestyles.navigationTextHold}' text=""
+				ui:field="loginBackTxt" visible="false"> 
+			</custom:FastButton>
+			<g:Label styleName='{resources.mobilestyles.headerLabelStyles}'
+				ui:field="headerLabel" text="Login">
+			</g:Label>
+		</g:HorizontalPanel>
+		<g:ScrollPanel ui:field="mainScrollPanel" styleName='{resources.loginMobileStyles.loginScroller}' >
+		 <g:FlowPanel ui:field="loginMainPanel"  styleName='{resources.loginMobileStyles.loginFlowPanel}' height="98%">
+	       <g:Label ui:field="mailIdLabel" text="Email-ID" styleName='{resources.mobilestyles.blackLabel}'></g:Label>
+	       <g:TextBox ui:field="mailIdTxtBox" styleName='{resources.mobilestyles.textBox}' ></g:TextBox>
+	       <g:Label ui:field="passwordLabel" text="Password" styleName='{resources.mobilestyles.blackLabel}'></g:Label>
+	       <g:TextBox ui:field="passwordTxtBox" styleName='{resources.mobilestyles.textBox}'></g:TextBox>
+	       <g:HorizontalPanel ui:field="loginPasswdPanel" width="100%">
+	           <custom:FastButton ui:field="loginInShowPswd" text="&#xe06e;" normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' ></custom:FastButton>
+<!-- 	           <g:Label ui:field="showPswdLabel" text="Show Password" styleName='{resources.mobilestyles.blackLabel}' ></g:Label> -->
+	        </g:HorizontalPanel>
+<!-- 	   		<g:HorizontalPanel ui:field="actionBtnPanel" width="100%"> -->
+	   		    <custom:FastButton ui:field="loginSubmitBtn" text="Login" normalStyle='{resources.mobilestyles.fastbuttonBlue}'
+				holdPressStyle='{resources.mobilestyles.fastbuttonBlueHold}' ></custom:FastButton>
+	   		    <custom:FastButton ui:field="newUserBtn" text="New User" normalStyle='{resources.mobilestyles.fastbuttonBlue}'
+				holdPressStyle='{resources.mobilestyles.fastbuttonBlueHold}' ></custom:FastButton>
+<!--	   		    <custom:FastButton ui:field="clearBtn"  text="Clear" normalStyle='{resources.mobilestyles.fastbuttonBlue}'
+				holdPressStyle='{resources.mobilestyles.fastbuttonBlueHold}' ></custom:FastButton>
+ 	   		</g:HorizontalPanel> 
+	   		<custom:FastButton ui:field="forgotBtn" text="Forgot Password"></custom:FastButton>-->
+	   </g:FlowPanel>
+	   </g:ScrollPanel>
+	   <g:ScrollPanel ui:field="signinScrollPanel" styleName='{resources.loginMobileStyles.loginScroller}' visible="false">
+	       <g:FlowPanel ui:field="signinMainPanel" styleName='{resources.loginMobileStyles.loginFlowPanel}' height="98%">
+	           <g:Label ui:field="signinUserNameLabel" text="User Name" styleName='{resources.mobilestyles.blackLabel}'></g:Label>
+	      	 	<g:TextBox ui:field="signinUserNameTxtBox" styleName='{resources.mobilestyles.textBox}' ></g:TextBox>
+	        	<g:Label ui:field="signinMailIdLabel" text="Mail Id" styleName='{resources.mobilestyles.blackLabel}'></g:Label>
+	      	 	<g:TextBox ui:field="signinMailIdTxtBox" styleName='{resources.mobilestyles.textBox}' ></g:TextBox>
+	       		<g:Label ui:field="signinPasswordLabel" text="Password" styleName='{resources.mobilestyles.blackLabel}'></g:Label>
+	       		<g:TextBox ui:field="signinPasswordTxtBox" styleName='{resources.mobilestyles.textBox}'></g:TextBox>
+	       		<g:HorizontalPanel ui:field="signPasswdPanel" width="100%">
+	       		<custom:FastButton ui:field="signInShowPswd" text="&#xe06e;" normalStyle='{resources.mobilestyles.roundIcons}'
+						holdPressStyle='{resources.mobilestyles.roundIcons}' ></custom:FastButton>
+	       		</g:HorizontalPanel>
+	       		<custom:FastButton ui:field="createUser" text="Create User" normalStyle='{resources.mobilestyles.fastbuttonBlue}'
+				holdPressStyle='{resources.mobilestyles.fastbuttonBlueHold}' ></custom:FastButton>
+	       </g:FlowPanel>
+	   </g:ScrollPanel>
+	</g:HTMLPanel>
+	
+</ui:UiBinder> 

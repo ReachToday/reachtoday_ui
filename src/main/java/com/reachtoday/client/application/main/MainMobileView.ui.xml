@@ -1,0 +1,340 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+  xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:custom="urn:import:com.reachtoday.client.application.fastbutton">
+  <ui:with field="resources" type="com.reachtoday.client.resource.MobileResources"/>
+  <ui:style>
+  
+ /* Add CSS here. See the GWT docs on UI Binder for more details */
+		.namePanel {
+			width: 50%;
+			float: left;
+			height: 43px;
+		}
+		
+		.namePanel td {
+			vertical-align: middle !important;
+		}
+		
+		.viewport {
+			background-color: white;
+		}
+		
+		.searchPanel {
+			background-color: #FFFFFF;
+			margin-left: 8px;
+			margin-top: 3%;
+		}
+		
+		.page {
+			position: fixed;
+			z-index: 2;
+			min-width: 320px;
+			height: 100%;
+			width: 100%;
+			background-color: #fff;
+			-webkit-transition-property: -webkit-transform;
+			-webkit-transform: translate3d(0, 0, 0);
+			-webkit-transition-duration: 200ms;
+			-webkit-transition-timing-function: ease-in;
+			transition-property: transform;
+			transform: translate3D(0, 0, 0);
+			transition-duration: 200ms;
+			transition-timing-function: ease-in;
+		}
+		
+		.page header {
+			height: 43px;
+			background-color: #119dc9;
+			border-color: #111A33;
+			-moz-transition: left 200ms ease-in;
+		}
+		
+		.head {
+			margin: auto;
+		}
+		
+		.city {
+			color: #FFFFFF;
+			font-family: "Helvetica Neue", Helvetica, sans-serif;
+			font-size: 17px;
+			line-height: 15px;
+			position: relative;
+			width: 150px;
+			text-align: center;
+			font-weight: bold;
+			text-shadow: none;
+			cursor: pointer;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		
+		.text1 {
+			font-weight: bold;
+			display: none;
+		}
+		
+		.mole1 {
+			position: fixed;
+			width: 100%;
+			float: center;
+			color: white;
+			background-color: #BB3333;
+			display: none;
+			z-index: 8 !important;
+			height: 30px;
+			top: 43px;
+		}
+		
+		.mole3 {
+			margin: auto;
+			width: 100%;
+			position: absolute;
+			background: transparent;
+			display: none;
+			z-index: 300;
+			height: 22px;
+		}
+		
+		.mole5 {
+			height: 21px;
+			display: table;
+			margin: auto;
+			-moz-box-shadow: 0px 2px 3px #dbdbdb; /*FF 3.5+*/
+			-webkit-box-shadow: 0px 2px 3px #dbdbdb;
+			/*Saf3-4, Chrome, iOS 4.0.2-4.2, Android 2.3+*/
+			box-shadow: 0px 2px 3px #dbdbdb;
+			/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+		}
+		
+		.mole4 {
+			margin: auto;
+			position: relative;
+			background-color: #f9edbe;
+			border: solid 1.5px #f0c36d;
+			border-radius: 0% 0% 7% 7%;
+			display: none;
+			z-index: 400;
+		}
+		
+		.text2 {
+			font-weight: bolder;
+			line-height: 25px;
+			letter-spacing: -1px;
+			display: block;
+			color: black;
+			padding-left: 11px;
+			padding-right: 11px;
+			padding-top: 3px;
+			font-size: 12.5px;
+		}
+		
+		.leftMenuIcon {
+			color: #fff;
+			font-size: 12pt;
+			line-height: 44px;
+		}
+		
+		.alert {
+			margin-top: 0px;
+			z-index: 2 !important;
+		}
+		
+		.CompanyName {
+			background-color: #ebebeb;
+			font-family: "Helvetica Neue", Helvetica, sans-serif;
+			font-weight: bold;
+			color: #8E8E93;
+			line-height: 20px;
+			font-size: 16px;
+			margin-left: 5px;
+			margin-top:10px;
+			width: 100%;
+			word-wrap: break-word;
+		}
+		
+		
+		.display {
+			min-height: 90%;
+			height: 90%;
+			overflow-x: hidden;
+		}
+		
+		.menu {
+			position: fixed;
+			width: 150px;
+			height: 100%;
+			top: 0;
+			left: 0;
+			overflow-y: auto;
+			overflow-x: hidden;
+			background-color: #ebebeb;
+		}
+		
+		.menu  header {
+			padding: 0 8px;
+			width: 150px;
+			height: 43px;
+		}
+		
+		
+		.menuPanel {
+			background-color: #ebebeb;
+			width: 100%;
+		}
+		
+		.usernameLabel {
+			line-height: 15px;
+			background-color: #ebebeb;
+			font-family: "Helvetica Neue", Helvetica, sans-serif;
+			color: #8E8E93;
+			font-size: 10px;
+			margin-left: 6%;
+			width: 96%;
+			word-wrap: break-word;
+			margin-top: 10%;
+		}
+		
+		.main {
+			position: absolute;
+			background-color: none;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.homeHPanel {
+			border-bottom: 1px solid #E5E5EB;
+			padding: 5px;
+		}
+		.companypanel{
+	margin-left: 6%;
+	}
+		.notificationCount{
+			
+			background: #ff0000; /* Old browsers */
+			background: -moz-linear-gradient(center top, #FAA290 0%, #F77B62 14%, #EC3120 87%,
+				#CE2314 100%) repeat scroll 0 0 transparent;
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAA290),
+				color-stop(14%, #F77B62), color-stop(87%, #EC3120),
+				color-stop(100%, #CE2314)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #FAA290 0%, #F77B62 14%, #EC3120 87%,
+				#CE2314 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314
+				100%); /* Opera 11.10+ */
+			background: linear-gradient(to bottom, #FAA290 0%, #F77B62 14%, #EC3120 87%, #CE2314
+				100%); /* W3C */
+			border-radius: 2px 2px 2px 2px;
+			margin-top:2.5px;
+			margin-left:24px;
+			display:block;
+			color: #FFFFFF;
+			display: inline-block;
+			font-size: 11px;
+			line-height: 1;
+			padding: 1px 4px;
+			text-shadow: 0 0px 1px rgba(0, 0, 0, 0.4);
+			position: absolute;
+			font-weight: bold;
+		}
+  </ui:style>
+ 
+  
+  
+    <!-- Add GWT widgets here. Enter < and hit Ctrl-Space to auto-complete 
+      widget names. The ui:field attribute binds an element to a field in the owner 
+      class. See the GWT docs on UI Binder for more details. -->
+  <g:HTMLPanel styleName='{style.viewport}'>
+		<g:HTMLPanel styleName="{style.menu}" ui:field="menu">
+
+			<g:HTMLPanel ui:field="menu1" styleName='{style.menuPanel}'>
+				<g:HorizontalPanel styleName='{style.companypanel}' ui:field="companypanel">
+				<custom:FastButton normalStyle='{resources.mobilestyles.reachTodayIcons}'
+						holdPressStyle='{resources.mobilestyles.reachTodayIcons}' text="&#xe600;"
+						ui:field="companysymbol" />
+				<g:Label ui:field="CompanyName" styleName='{style.CompanyName}'
+					text="ReachToday"></g:Label>
+					
+					</g:HorizontalPanel>
+				<g:HorizontalPanel ui:field="homePanel">
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuPanel}'
+						holdPressStyle='{resources.mobilestyles.leftMenuPanelHold}' text=" "
+						ui:field="homeClickable" />
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuButtonBlue}'
+						holdPressStyle='{resources.mobilestyles.leftMenuButtonBlueHold}'
+						text="Home" ui:field="home" />
+				</g:HorizontalPanel>
+				
+
+				<g:HorizontalPanel ui:field="RefreshPanel">
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuPanel}'
+						holdPressStyle='{resources.mobilestyles.leftMenuPanelHold}' text=" "
+						ui:field="refreshClickable" />
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuButtonBlue}'
+						holdPressStyle='{resources.mobilestyles.leftMenuButtonBlueHold}'
+						text="Refresh" ui:field="Refresh" />
+				</g:HorizontalPanel>
+
+				<g:HorizontalPanel ui:field="Login">
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuPanel}'
+						holdPressStyle='{resources.mobilestyles.leftMenuPanelHold}' text=" "
+						ui:field="LoginBtn" />
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuButtonBlue}'
+						holdPressStyle='{resources.mobilestyles.leftMenuButtonBlueHold}'
+						text="Login" ui:field="login" />
+				</g:HorizontalPanel>
+				<g:HorizontalPanel ui:field="Logout">
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuPanel}'
+						holdPressStyle='{resources.mobilestyles.leftMenuPanelHold}' text=" "
+						ui:field="LogoutBtn" />
+					<custom:FastButton normalStyle='{resources.mobilestyles.leftMenuButtonBlue}'
+						holdPressStyle='{resources.mobilestyles.leftMenuButtonBlueHold}'
+						text="Logout" ui:field="logout" />
+				</g:HorizontalPanel>
+
+			</g:HTMLPanel>
+		</g:HTMLPanel>
+
+		
+		<g:HTMLPanel styleName="{style.page}" ui:field="page">
+			<header>
+				<custom:FastButton backgroundImage='{resources.menuicon}'
+					normalStyle='{resources.mobilestyles.showhideLeftMenuNormal}'
+					holdPressStyle='{resources.mobilestyles.showhideLeftMenuHoldPress}'
+					text="" ui:field="showhidemenuleft" debugId="leftMenuBtn" />
+
+				<g:HorizontalPanel styleName='{style.namePanel}'>
+					<custom:FastButton styleName='{style.city}'
+						ui:field="City" text="ReachToday"></custom:FastButton>
+				</g:HorizontalPanel>
+				
+					<g:HorizontalPanel styleName="{style.head}"
+					ui:field="head" horizontalAlignment="center" verticalAlignment="top">
+					<g:HorizontalPanel ui:field="messagealert"
+						debugId="messagealert">
+						<g:HorizontalPanel styleName="{style.notificationCount}"
+							ui:field="messageCountPanel" visible="false"></g:HorizontalPanel>
+						<custom:FastButton backgroundImage='{resources.messagenotification}'
+							normalStyle='{resources.mobilestyles.headerButtonNormal}'
+							holdPressStyle='{resources.mobilestyles.headerButtonHold}' text=""
+							ui:field="messagenotification" debugId='messagesIcon' />
+					</g:HorizontalPanel>
+					</g:HorizontalPanel>
+				
+			</header>
+			<div>
+				<g:HTMLPanel styleName='{style.mole3}' ui:field="nMole3">
+					<g:FlowPanel styleName='{style.mole5}' ui:field="nMole5">
+						<g:FlowPanel styleName='{style.mole4}' ui:field="nMole4">
+							<g:Label ui:field="text3" styleName='{style.text2}'
+								horizontalAlignment='ALIGN_CENTER' width="100%"></g:Label>
+						</g:FlowPanel>
+					</g:FlowPanel>
+				</g:HTMLPanel>
+			</div>
+			<g:SimplePanel ui:field="mainDisplayPanel" width="100%"
+				height="100%">
+			</g:SimplePanel>
+		</g:HTMLPanel>
+		
+	</g:HTMLPanel>
+</ui:UiBinder> 
